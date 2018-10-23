@@ -13,11 +13,13 @@ class LoginViewController: UIViewController {
   
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
+  @IBOutlet weak var loading: UIActivityIndicatorView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     emailTextField.delegate = self
     passwordTextField.delegate = self
+    loading.isHidden = true
   }
   
   @IBAction func signUp(_ sender: Any) {
@@ -26,16 +28,16 @@ class LoginViewController: UIViewController {
   }
   
   @IBAction func login(_ sender: Any) {
+    
+    loading.isHidden = false
     let errorMessage = checkFields()
     if errorMessage.isEmpty {
-//      showActivityIndicator()
       UdacityClient.sharedInstance.login(username: emailTextField.text ?? "", password: passwordTextField.text ?? ""){ [unowned self] (response, error) in
         if let response = response {
           UserInfo.sharedInstance.sessionId = response.sessionID
           UserInfo.sharedInstance.userId = response.userID
           self.retrieveUserInformation(response.userID)
         } else {
-//          self.hideActivityIndicator()
           self.showLoginError(error)
         }
         
@@ -50,11 +52,11 @@ class LoginViewController: UIViewController {
   private func retrieveUserInformation(_ userId: String) {
     UdacityClient.sharedInstance.retrieveUserInformation(userId)
     { [unowned self] (response, error) in
-//      self.hideActivityIndicator()
       if let response = response {
         UserInfo.sharedInstance.firstName = response.firstName
         UserInfo.sharedInstance.lastName = response.lastName
         performUIUpdatesOnMain {
+          self.loading.isHidden = true
           self.performSegue(withIdentifier: "GoToMapTab", sender: nil)
         }
       } else {
@@ -65,6 +67,7 @@ class LoginViewController: UIViewController {
   
   private func showLoginError(_ error: NSError?) {
     performUIUpdatesOnMain {
+      self.loading.isHidden = true
       let errorText : String
       if let error = error {
         errorText = error.localizedDescription
@@ -75,14 +78,7 @@ class LoginViewController: UIViewController {
     }
   }
   
-  
-//  func isTextFieldEmpty() -> Bool {
-//    var result = true
-//    if let text = self.text {
-//      result = text.isEmpty
-//    }
-//    return result
-//  }
+
   private func checkFields() -> String {
     let email = emailTextField.text
     let password = passwordTextField.text

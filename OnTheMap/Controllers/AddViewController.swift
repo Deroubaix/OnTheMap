@@ -15,6 +15,11 @@ class AddViewController : UIViewController {
   
   @IBOutlet weak var locationTextField: UITextField!
   @IBOutlet weak var urlTextField: UITextField!
+  @IBOutlet weak var loading: UIActivityIndicatorView!
+  
+  override func viewDidLoad() {
+    loading.isHidden = true
+  }
   
   @IBAction func dismissViewController(_ sender: Any) {
     dismiss(animated: true, completion: nil)
@@ -23,7 +28,7 @@ class AddViewController : UIViewController {
   @IBAction func findLocation(_ sender: Any) {
     let errorMessage = checkFields()
     if errorMessage.isEmpty {
-//      showActivityIndicator()
+      loading.isHidden = false
       searchLocationFromString(locationTextField.text ?? "")
     } else {
       presentErrorAlertController(title: "Required field", errorMessage: errorMessage, buttonText: "Ok")
@@ -39,7 +44,7 @@ class AddViewController : UIViewController {
         let location = placemarks.first?.location
         else {
           performUIUpdatesOnMain {
-//            self.hideActivityIndicator()
+            self.loading.isHidden = true
             self.showNoLocationError()
           }
           return
@@ -57,7 +62,7 @@ class AddViewController : UIViewController {
       geoCoder.reverseGeocodeLocation(lastLocation,
                                       completionHandler: { (placemarks, error) in
                                         if error == nil {
-//                                          self.hideActivityIndicator()
+                                        self.loading.isHidden = true
                                           let firstLocation = placemarks?[0]
                                           self.performSegue(withIdentifier: "SubmitViewController", sender: firstLocation)
                                         }

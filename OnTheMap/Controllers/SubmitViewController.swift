@@ -50,11 +50,9 @@ class SubmitViewController : UIViewController, CLLocationManagerDelegate {
     let firstName = UserInfo.sharedInstance.firstName ?? ""
     let lastName = UserInfo.sharedInstance.lastName ?? ""
     
-//    showActivityIndicator()
     ParseClient.sharedInstance.saveStudentLocation(objectId, userId, firstName, lastName, mapString, mediaUrl, latitude, longitude) {
       (response, error) in
       performUIUpdatesOnMain {
-//        self.hideActivityIndicator()
         if let error = error {
           self.presentErrorAlertController(title: "Error", errorMessage: error.localizedDescription, buttonText: "Ok")
         } else {

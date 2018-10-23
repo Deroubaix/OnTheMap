@@ -35,10 +35,9 @@ class DetailsViewController : UIViewController {
   
   
   @IBAction func retrieveLocations(_ sender: Any) {
-//    showActivityIndicator()
+    
     ParseClient.sharedInstance.retrieveStudentLocations({
       [weak self] (locations, error) in
-//      self?.hideActivityIndicator()
       if let error = error {
         self?.delegate.onDataLoadFailure(error)
       } else {
@@ -58,10 +57,9 @@ class DetailsViewController : UIViewController {
   
   
   private func checkIfUserHasLocations() {
-//    showActivityIndicator()
+
     ParseClient.sharedInstance.retrieveStudentLocation(UserInfo.sharedInstance.userId ?? ""){
       [unowned self] (locations, error) in
-//      self.hideActivityIndicator()
       if let error = error {
         self.presentErrorAlertController(title: "Error checking user locations", errorMessage: error.localizedDescription, buttonText: "Ok")
       } else {
