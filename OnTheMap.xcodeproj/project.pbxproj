@@ -29,7 +29,6 @@
 		C521616D217B1F2D0085E564 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C521616C217B1F2D0085E564 /* Annotation.swift */; };
 		C521616F217B1FA80085E564 /* DataCompletionListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = C521616E217B1FA80085E564 /* DataCompletionListener.swift */; };
 		C5216171217B23060085E564 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5216170217B23060085E564 /* GCDBlackBox.swift */; };
-		C5216173217B24190085E564 /* TextField&Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5216172217B24190085E564 /* TextField&Utilities.swift */; };
 		C5216175217B45970085E564 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5216174217B45970085E564 /* DetailsViewController.swift */; };
 		C5216177217B47C10085E564 /* MapTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5216176217B47C10085E564 /* MapTabViewController.swift */; };
 		C5216179217B50200085E564 /* MapTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5216178217B50200085E564 /* MapTableViewController.swift */; };
@@ -62,7 +61,6 @@
 		C521616C217B1F2D0085E564 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		C521616E217B1FA80085E564 /* DataCompletionListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCompletionListener.swift; sourceTree = "<group>"; };
 		C5216170217B23060085E564 /* GCDBlackBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
-		C5216172217B24190085E564 /* TextField&Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField&Utilities.swift"; sourceTree = "<group>"; };
 		C5216174217B45970085E564 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		C5216176217B47C10085E564 /* MapTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTabViewController.swift; sourceTree = "<group>"; };
 		C5216178217B50200085E564 /* MapTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 				C521617E217F14C90085E564 /* Controllers */,
 				C521616E217B1FA80085E564 /* DataCompletionListener.swift */,
 				C5216170217B23060085E564 /* GCDBlackBox.swift */,
-				C5216172217B24190085E564 /* TextField&Utilities.swift */,
 				C5216137217A6D900085E564 /* Main.storyboard */,
 				C521613A217A6D920085E564 /* Assets.xcassets */,
 				C521613C217A6D920085E564 /* LaunchScreen.storyboard */,
@@ -255,7 +252,6 @@
 				C521616D217B1F2D0085E564 /* Annotation.swift in Sources */,
 				C521616A217B1E9D0085E564 /* UserInfoResponse.swift in Sources */,
 				C5216152217A703E0085E564 /* StudentModel.swift in Sources */,
-				C5216173217B24190085E564 /* TextField&Utilities.swift in Sources */,
 				C521614A217A6E8C0085E564 /* ParseConstants.swift in Sources */,
 				C521617D217B589E0085E564 /* SubmitViewController.swift in Sources */,
 				C5216168217B1E6F0085E564 /* UserInfo.swift in Sources */,
