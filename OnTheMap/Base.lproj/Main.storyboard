@@ -152,6 +152,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="Dms-OL-5L5" id="5xZ-xC-epn"/>
                         <outlet property="loading" destination="ixV-nl-d2x" id="Pti-qj-YSu"/>
+                        <outlet property="logInButton" destination="uWm-TC-ZDC" id="2zs-St-WrP"/>
                         <outlet property="passwordTextField" destination="8yy-Wx-hkL" id="xOd-OU-pXP"/>
                         <segue destination="TXm-Jd-MKR" kind="show" identifier="GoToMapTab" id="dIP-pP-9Xh"/>
                     </connections>
@@ -443,7 +444,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H7x-J2-Bui">
-                                <rect key="frame" x="0.0" y="63.999999999999993" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StudentCell" textLabel="Mqu-34-cSd" detailTextLabel="Dce-ym-dzm" imageView="wHo-B8-yOm" style="IBUITableViewCellStyleSubtitle" id="rsE-Mf-ZdB">

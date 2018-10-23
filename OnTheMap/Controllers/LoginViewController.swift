@@ -14,12 +14,14 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var loading: UIActivityIndicatorView!
+  @IBOutlet weak var logInButton: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     emailTextField.delegate = self
     passwordTextField.delegate = self
     loading.isHidden = true
+    
   }
   
   @IBAction func signUp(_ sender: Any) {
@@ -30,6 +32,7 @@ class LoginViewController: UIViewController {
   @IBAction func login(_ sender: Any) {
     
     loading.isHidden = false
+    enableUI(false)
     let errorMessage = checkFields()
     if errorMessage.isEmpty {
       UdacityClient.sharedInstance.login(username: emailTextField.text ?? "", password: passwordTextField.text ?? ""){ [unowned self] (response, error) in
@@ -59,6 +62,7 @@ class LoginViewController: UIViewController {
           self.emailTextField.text = ""
           self.passwordTextField.text = ""
           self.loading.isHidden = true
+          self.enableUI(true)
           self.performSegue(withIdentifier: "GoToMapTab", sender: nil)
         }
       } else {
@@ -70,6 +74,7 @@ class LoginViewController: UIViewController {
   private func showLoginError(_ error: NSError?) {
     performUIUpdatesOnMain {
       self.loading.isHidden = true
+      self.enableUI(true)
       let errorText : String
       if let error = error {
         errorText = error.localizedDescription
@@ -110,8 +115,17 @@ extension LoginViewController : UITextFieldDelegate {
     return true
   }
   
-
-  
+  func enableUI(_ enable: Bool) {
+    emailTextField.isEnabled = enable
+    passwordTextField.isEnabled = enable
+    logInButton.isEnabled = enable
+    
+    if enable {
+      logInButton.alpha = 1.0
+    } else {
+      logInButton.alpha = 0.5
+    }
+  }
 }
 
 
