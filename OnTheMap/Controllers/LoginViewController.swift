@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
     emailTextField.delegate = self
     passwordTextField.delegate = self
     loading.isHidden = true
+    initButton()
     
   }
   
@@ -103,6 +104,11 @@ class LoginViewController: UIViewController {
     let alertAction = UIAlertAction(title: buttonText, style: .default, handler: nil)
     alert.addAction(alertAction)
     self.present(alert, animated: true, completion: nil)
+  }
+  
+  fileprivate func initButton(){
+    logInButton.layer.cornerRadius = 5.0
+    logInButton.clipsToBounds = true
   }
   
 }

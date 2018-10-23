@@ -16,10 +16,12 @@ class AddViewController : UIViewController {
   @IBOutlet weak var locationTextField: UITextField!
   @IBOutlet weak var urlTextField: UITextField!
   @IBOutlet weak var loading: UIActivityIndicatorView!
+  @IBOutlet weak var findButton: UIButton!
   
   
   override func viewDidLoad() {
     loading.isHidden = true
+    initButton()
   }
   
   @IBAction func dismissViewController(_ sender: Any) {
@@ -110,6 +112,11 @@ class AddViewController : UIViewController {
         locationDetailViewController.mediaUrl = urlTextField.text!
       }
     }
+  }
+  
+  fileprivate func initButton(){
+    findButton.layer.cornerRadius = 5.0
+    findButton.clipsToBounds = true
   }
   
 }

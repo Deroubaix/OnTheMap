@@ -123,7 +123,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Hr-At-dDm">
                                 <rect key="frame" x="32" y="335" width="350" height="401"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ixV-nl-d2x">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ixV-nl-d2x">
                                         <rect key="frame" x="165" y="190.66666666666663" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -330,7 +330,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubY-Gm-Ihv">
                                 <rect key="frame" x="66" y="348" width="282" height="339"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Sea-kC-58r">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Sea-kC-58r">
                                         <rect key="frame" x="131" y="159.66666666666669" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -363,6 +363,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="findButton" destination="UlA-FU-qIu" id="Mbr-py-jtJ"/>
                         <outlet property="loading" destination="Sea-kC-58r" id="Bse-Q2-djT"/>
                         <outlet property="locationTextField" destination="ETh-Ur-86H" id="q0b-Tm-Efn"/>
                         <outlet property="urlTextField" destination="L4u-ml-l8y" id="9Jj-tS-02J"/>
