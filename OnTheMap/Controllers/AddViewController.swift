@@ -17,6 +17,7 @@ class AddViewController : UIViewController {
   @IBOutlet weak var urlTextField: UITextField!
   @IBOutlet weak var loading: UIActivityIndicatorView!
   
+  
   override func viewDidLoad() {
     loading.isHidden = true
   }

@@ -56,6 +56,8 @@ class LoginViewController: UIViewController {
         UserInfo.sharedInstance.firstName = response.firstName
         UserInfo.sharedInstance.lastName = response.lastName
         performUIUpdatesOnMain {
+          self.emailTextField.text = ""
+          self.passwordTextField.text = ""
           self.loading.isHidden = true
           self.performSegue(withIdentifier: "GoToMapTab", sender: nil)
         }
