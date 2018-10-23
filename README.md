@@ -1,4 +1,4 @@
-# onthemap
+# OnTheMap
 
 
 iOS Developer Nanodegree Project
